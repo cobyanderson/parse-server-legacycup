@@ -7,7 +7,7 @@ Parse.Cloud.define('sendNotification', function(req, res) {
       alert: req.params.note,
       badge: 1
     }
-  }).then(function() {
+  }, { useMasterKey:true}).then(function() {
   res.success('Push Sent');
   });
 });
