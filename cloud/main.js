@@ -4,9 +4,6 @@ var server = new ParseServer({
   cloud: '/cloud/main.js',
   appId: 'myAppId',
   masterKey: 'legacykey', //Add your master key here. Keep it secret!
-
-  clientKey: 'clientkey',
- 
    push: {
    
     ios: 
