@@ -21,18 +21,12 @@ var api = new ParseServer({
   },
    push: {
    
-    ios: [
+    ios: 
      {
       pfx: '/ApplePushCertificateMicosParse.p12', // The filename of private key and certificate in PFX or PKCS12 format from disk  
       bundleId: 'com.coby.MiCos', // The bundle identifier associate with your app
       production: true // Specifies which environment to connect to: Production (if true) or Sandbox
-    },
-    {
-      pfx: '/ApplePushCertificateMicosParse.p12', // The filename of private key and certificate in PFX or PKCS12 format from disk  
-      bundleId: 'com.coby.MiCos', // The bundle identifier associate with your app
-      production: false // Specifies which environment to connect to: Production (if true) or Sandbox 
     }
-    ]
     }
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
