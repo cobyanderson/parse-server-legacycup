@@ -13,10 +13,7 @@ var api = new ParseServer({
   appId: process.env.APP_ID || 'myAppId',
   masterKey: process.env.MASTER_KEY || 'legacykey', //Add your master key here. Keep it secret!
    push: {
-     android: {
-      senderId: 'fake', // The Sender ID of GCM
-      apiKey: 'fake' // The Server API Key of GCM
-    },
+ 
     ios: [
        {
       pfx: '/Users/samuelcobyanderson/Desktop/PushCertificateParseServerMiCos.p12', // The filename of private key and certificate in PFX or PKCS12 format from disk  
