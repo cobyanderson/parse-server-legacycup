@@ -23,7 +23,7 @@ var api = new ParseServer({
    
     ios: 
      {
-      pfx: '/Users/samuelcobyanderson/ApplePushCertificateMicosParse.p12', // The filename of private key and certificate in PFX or PKCS12 format from disk  
+      pfx: '/Users/samuelcobyanderson/Documents/SwiftProjects/parse-server-legacycup/certs/PushCertificateParseServerMiCos.p12 ', // The filename of private key and certificate in PFX or PKCS12 format from disk  
       bundleId: 'com.coby.MiCos', // The bundle identifier associate with your app
       production: false // Specifies which environment to connect to: Production (if true) or Sandbox
     }
