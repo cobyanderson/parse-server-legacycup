@@ -12,10 +12,9 @@ var api = new ParseServer({
   cloud: process.env.CLOUD_CODE_MAIN || '/Users/samuelcobyanderson/Documents/SwiftProjects/parse-server-legacycup/cloud/main.js',
   appId: process.env.APP_ID || 'myAppId',
   masterKey: process.env.MASTER_KEY || 'legacykey', //Add your master key here. Keep it secret!
-   push: {
- 
+  push: {
     ios: [
-       {
+      {
       pfx: '/Users/samuelcobyanderson/Desktop/PushCertificateParseServerMiCos.p12', // The filename of private key and certificate in PFX or PKCS12 format from disk  
       bundleId: 'com.coby.MiCos', // The bundle identifier associate with your app
       production: true // Specifies which environment to connect to: Production (if true) or Sandbox
