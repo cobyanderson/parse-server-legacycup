@@ -10,7 +10,7 @@ var databaseUri = 'mongodb://cobyanderson:lumpa@ds013212.mlab.com:13212/legacy-c
 
 var api = new ParseServer({
   databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
-  cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
+  cloud: process.env.CLOUD_CODE_MAIN || '/Users/samuelcobyanderson/Documents/SwiftProjects/parse-server-legacycup/cloud/main.js',
   appId: process.env.APP_ID || 'myAppId',
   masterKey: process.env.MASTER_KEY || 'legacykey', //Add your master key here. Keep it secret!
    push: {
