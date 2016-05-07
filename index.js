@@ -13,21 +13,26 @@ var api = new ParseServer({
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID || 'myAppId',
   masterKey: process.env.MASTER_KEY || 'legacykey', //Add your master key here. Keep it secret!
- 
-  serverURL: process.env.SERVER_URL || 'https://minerva-legacy-cup.herokuapp.com/parse', //'http://localhost:1337/parse',  // Don't forget to change to https if needed
-  clientKey: 'clientkey',
-  liveQuery: {
-    classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
-  },
-   push: {
-   
-    ios: 
+    push: {
+    ios: [
+       {
+      pfx: '/Users/samuelcobyanderson/Documents/SwiftProjects/parse-server-legacycup/certs/PushCertificateParseServerMiCos.p12', // The filename of private key and certificate in PFX or PKCS12 format from disk  
+      bundleId: 'com.coby.MiCos', // The bundle identifier associate with your app
+      production: true // Specifies which environment to connect to: Production (if true) or Sandbox
+    },
      {
       pfx: '/Users/samuelcobyanderson/Documents/SwiftProjects/parse-server-legacycup/certs/PushCertificateParseServerMiCos.p12', // The filename of private key and certificate in PFX or PKCS12 format from disk  
       bundleId: 'com.coby.MiCos', // The bundle identifier associate with your app
       production: false // Specifies which environment to connect to: Production (if true) or Sandbox
     }
-    }
+    ]
+    },
+  serverURL: process.env.SERVER_URL || 'https://minerva-legacy-cup.herokuapp.com/parse', //'http://localhost:1337/parse',  // Don't forget to change to https if needed
+  clientKey: 'clientkey',
+  liveQuery: {
+    classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
+  }
+
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
