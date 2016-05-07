@@ -5,8 +5,7 @@ var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
 
-var databaseUri = 'mongodb://cobyanderson:lumpa@ds013212.mlab.com:13212/legacy-cup-database';
-
+var databaseUri = ('mongodb://cobyanderson:lumpa@ds013212.mlab.com:13212/legacy-cup-database');
 
 var api = new ParseServer({
   databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
