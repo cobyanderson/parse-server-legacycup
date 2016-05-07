@@ -5,13 +5,13 @@ var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
 
-var databaseUri = 'mongodb://cobyanderson:lumpa@ds013212.mlab.com:13212/legacy-cup-database';
+//var databaseUri = 'mongodb://cobyanderson:lumpa@ds013212.mlab.com:13212/legacy-cup-database';
 
 var api = new ParseServer({
-  databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
-  cloud: process.env.CLOUD_CODE_MAIN || '/Users/samuelcobyanderson/Documents/SwiftProjects/parse-server-legacycup/cloud/main.js',
-  appId: process.env.APP_ID || 'myAppId',
-  masterKey: process.env.MASTER_KEY || 'legacykey', //Add your master key here. Keep it secret!
+  databaseURI: 'mongodb://cobyanderson:lumpa@ds013212.mlab.com:13212/legacy-cup-database',
+  cloud: '/Users/samuelcobyanderson/Documents/SwiftProjects/parse-server-legacycup/cloud/main.js',
+  appId: 'myAppId',
+  masterKey: 'legacykey', //Add your master key here. Keep it secret!
    push: {
      android: {
       senderId: 'fake', // The Sender ID of GCM
