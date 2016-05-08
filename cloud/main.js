@@ -1,6 +1,6 @@
 
 Parse.Cloud.define('sendNotification', function(req, res) {
-  
+  console.log("cloudcode called");
   Parse.Push.send({
     where: (req.params.installations),
     data: {
