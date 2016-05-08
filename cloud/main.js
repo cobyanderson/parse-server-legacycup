@@ -1,13 +1,28 @@
 
-Parse.Cloud.define('sendNotification', function(req, res) {
+Parse.Cloud.define('sendNotification', function(request, response) {
+    var installationQuery = new Parse.Query(Parse.Installation);
+    var notify = request.params.notify
+    var Class = request.params.Class
+    var legacy = request.params.legacy
+    var toUser = request.params.toUser
+    
+    if (notify == 0) {
+      installationQuery.containedIn("class", [Class, 2019]);
+    };
+    if (notify == -1) {
+      installationQuery.equalTo("user", toUser);
+    };
+    if (notify == 1) {
+      installationQuery.containedIn("legacy", [legacy, "Admin"])
+    };
   console.log("cloudcode called");
   Parse.Push.send({
-    where: (req.params.installations),
+    where: installationQuery,
     data: {
-      alert: req.params.note,
+      alert: request.params.note,
       badge: 1
     }
   }, { useMasterKey: true}).then(function() {
-  res.success('Push Sent');
+  response.success('Push Sent');
   });
 });
