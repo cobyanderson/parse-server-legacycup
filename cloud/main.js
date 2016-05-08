@@ -5,14 +5,17 @@ Parse.Cloud.define('sendNotification', function(request, response) {
     var Class = request.params.Class
     var legacy = request.params.legacy
     var toUser = request.params.toUser
-    
+    //notify -1 = gratitude, notify 0 = all in class, notify 1 = all in legacy, notify 2 = everyone
     if (notify == 0) {
+      //sends only to the awardee's class if that variable exists and anyone with a class of 9999 which is the staff
       installationQuery.containedIn("class", [Class, 9999]);
     };
     if (notify == -1) {
+      //sends only to awardee because it is a gratitude
       installationQuery.equalTo("userId", toUser);
     };
     if (notify == 1) {
+       //sends only to the awardee's legacy if that exists and anyone with a legacy of "Admin" which is the staff
       installationQuery.containedIn("legacy", [legacy, "Admin"])
     };
   console.log("cloudcode called");
