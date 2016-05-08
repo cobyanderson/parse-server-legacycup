@@ -7,7 +7,7 @@ Parse.Cloud.define('sendNotification', function(request, response) {
     var toUser = request.params.toUser
     
     if (notify == 0) {
-      installationQuery.containedIn("class", [Class, 2019]);
+      installationQuery.containedIn("class", [Class, 9999]);
     };
     if (notify == -1) {
       installationQuery.equalTo("user", toUser);
