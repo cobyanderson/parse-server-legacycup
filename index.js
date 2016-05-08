@@ -6,7 +6,7 @@ var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
 
 var api = new ParseServer({
-  VERBOSE = 1
+  VERBOSE = 1;
   databaseURI: 'mongodb://cobyanderson:lumpa@ds013212.mlab.com:13212/legacy-cup-database',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID || 'myAppId',
