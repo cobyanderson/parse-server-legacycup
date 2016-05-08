@@ -10,7 +10,7 @@ Parse.Cloud.define('sendNotification', function(request, response) {
       installationQuery.containedIn("class", [Class, 9999]);
     };
     if (notify == -1) {
-      installationQuery.equalTo("user", toUser);
+      installationQuery.equalTo("userId", toUser);
     };
     if (notify == 1) {
       installationQuery.containedIn("legacy", [legacy, "Admin"])
