@@ -29,7 +29,23 @@ var api = new ParseServer({
       
     // }
    // ]
+    },
+    verifyUserEmails: true,
+    publicServerURL: 'https://minerva-legacy-cup.herokuapp.com/parse',
+    appName: "Legacy Cup",
+      emailAdapter: {
+    module: 'parse-server-simple-mailgun-adapter',
+    options: {
+      // The address that your emails come from
+      fromAddress: 'LegacyCup@mg.minervaproject.com',
+      // Your domain from mailgun.com
+      domain: 'mg.minervaproject.com',
+      // Your API key from mailgun.com
+      apiKey: 'key-066547867cdb3ab8ad3b0c24c9c7cec7',
     }
+  }
+    
+    
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
