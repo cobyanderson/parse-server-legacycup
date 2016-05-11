@@ -23,7 +23,8 @@ Parse.Cloud.define('sendNotification', function(request, response) {
     where: installationQuery,
     data: {
       alert: request.params.note,
-      badge: 1
+      badge: 1,
+      sound: "velvet alert 07 descending.mp3"
     }
   }, { useMasterKey: true}).then(function() {
   response.success('Push Sent');
